@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        /*
         binding.editTextText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -49,12 +50,22 @@ public class MainActivity extends AppCompatActivity {
                 binding.text.setText(s.toString());
             }
         });
+        */
 
         prefDataStore = PrefDataStore.getInstance(this);
+        prefDataStore.getString("name")
+                        .ifPresent(name -> binding.text.setText(name));
 
         binding.saveButton.setOnClickListener(view -> {
             var text = binding.editTextText.getText().toString();
             prefDataStore.setString("name", text);
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        prefDataStore.getString("name")
+                .ifPresent(name -> binding.text.setText(name));
     }
 }
