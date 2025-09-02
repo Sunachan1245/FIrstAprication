@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">モバイルアプリ開発A</string>
+    <string name="app_name">モバイルアプリ開発</string>
+    <string name="content1">This is test content.</string>
 </resources>
