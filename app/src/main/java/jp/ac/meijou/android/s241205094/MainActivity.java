@@ -1,7 +1,7 @@
 package jp.ac.meijou.android.s241205094;
 
 import android.os.Bundle;
-import android.widget.TextView;
+//import android.widget.TextView;
 import android.text.Editable;
 import android.text.TextWatcher;
 
